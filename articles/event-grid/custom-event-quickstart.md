@@ -75,9 +75,10 @@ The endpoint for your web app must include the suffix `/api/updates/`.
 
 ```azurecli-interactive
 endpoint=https://$sitename.azurewebsites.net/api/updates
+subscriptionid=<your-subscription-id>
 
 az eventgrid event-subscription create \
-  --source-resource-id "/subscriptions/{subscription-id}/resourceGroups/{resource-group}/providers/Microsoft.EventGrid/topics/$topicname" \
+  --source-resource-id "/subscriptions/$subscriptionid/resourceGroups/gridResourceGroup/providers/Microsoft.EventGrid/topics/$topicname" \
   --name demoViewerSub \
   --endpoint $endpoint
   
